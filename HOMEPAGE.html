@@ -1,0 +1,99 @@
+<DOCTYPE html>
+<html>
+<head>
+</head>
+    <body onload= checkLoggedIn() >
+    <header>
+        <nav class="navbar">
+            <div class="options">
+                <a href="index.html">Log in</a>
+                <a href="HOMEPAGE.html">Home</a>
+                <a href="EXPLOREPAGE.html">Explore</a>
+                <a href="QUIZPAGE.html">Quiz</a>
+                <a href="CONTACTPAGE.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h3>TECTONIC TALES</h3>
+        <h6>"Stories Written in Earth's Crust."</h6>
+    </main>
+</body> 
+   <script>
+    function checkLoggedIn() {
+            var username = localStorage.getItem("username");
+            if (username) {
+                alert("Welcome back, " + username + "!");
+            } else {
+                alert("Please log in.");
+                window.location.href = "signup.html";
+            }
+        }
+</script>
+<style>
+        body {
+            color: white;
+            padding-top: 60px;
+            margin: 0;
+            background-color: cadetblue;
+            background-image: url(https://gifdb.com/images/high/cold-foggy-mountain-rbvi7wvg05uz8m2f.gif);
+            background-size: 110%;
+            margin: 200px;
+            font-size: 50px;
+            font-family: cursive;
+            background-repeat: no-repeat;
+            background-blend-mode: multiply;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .options {
+            display: flex;
+            gap: 15px;
+        }
+
+        .options a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s, border 0.3s;
+        }
+
+        .options a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h3 {
+            margin: 20px 0 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h6 {
+            margin: 0;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+</html>

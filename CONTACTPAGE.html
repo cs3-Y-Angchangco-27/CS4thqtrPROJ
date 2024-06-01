@@ -1,0 +1,116 @@
+<DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+     <header>
+        <nav class="navbar">
+            <div class="options">
+                <a href="index.html">Log in</a>
+                <a href="HOMEPAGE.html">Home</a>
+                <a href="EXPLOREPAGE.html">Explore</a>
+                <a href="QUIZPAGE.html">Quiz</a>
+                <a href="CONTACTPAGE.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+<div class="container">
+    <h1>Contact Us</h1>
+    <form id="contact-form">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        console.log("Name:", formData.get("name"));
+        console.log("Email:", formData.get("email"));
+        console.log("Message:", formData.get("message"));
+        alert("Your message has been sent!");
+        this.reset();
+    });
+</script>
+    <style>
+            
+    header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .options {
+            display: flex;
+            gap: 15px;
+        }
+
+        .options a {
+            font-size: 50px;
+            font-family: cursive;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s, border 0.3s;
+        }
+
+        .options a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        body {
+    
+            font-family: Arial, sans-serif;
+            background-color: burlywood;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 140px auto 50px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        input, textarea {
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</body>
+</html>

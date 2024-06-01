@@ -1,0 +1,129 @@
+<DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <form onsubmit="return submitFunction();">
+        <fieldset form="login" id="loginnabai">
+            <legend id="signup">SIGN-UP</legend>
+            <div id="mgainputs">
+                <label for="username">Username :</label>
+                <input type="text" id="username" class="info" required onblur="noinput(this)" onfocus="yesinput(this)"><br><br>
+                <label for="password">Password :</label>
+                <input type="password" id="password" class="info" required onblur="noinput(this)" onfocus="yesinput(this)"><br><br>
+                <input type="password" placeholder="Confirm Password !" id="confirmpass" required onblur="noinput(this)" onfocus="yesinput(this)" onchange="ConfirmPW()"><br><br>
+                <button type="submit">Confirm</button><br><br>
+
+                <select name="gender" id="genders">
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Prefer not to say :3!">Prefer not to say :3!</option>
+                </select> <br><br>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" class="info" required onblur="noinput(this)" onfocus="yesinput(this)"><br><br>
+            
+                <input type="reset" value="Reset" onclick="resetForm()">
+            </div>
+        </fieldset>
+    </form>
+    <script>
+        function noinput(info) {
+            if (info.value.trim() == "") {
+                info.style.border = "2px solid red";
+            }
+        }
+
+        function yesinput(info) {
+            info.style.border = "2px solid green";
+        }
+
+        function ConfirmPW() {
+            var H = document.getElementById("password").value;
+            var I = document.getElementById("confirmpass").value;
+            if (H != I) {
+                alert("Passwords don't match! Please try again.");
+            } else {
+                alert("Password confirmed.");
+            }
+        }
+        function submitFunction() {
+            var username = document.getElementById("username").value;
+            localStorage.setItem("username", username);
+            window.location.href = "HOMEPAGE.html";
+            return false;
+
+            
+        }
+      
+        function resetForm() {
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("confirmpass").value = "";
+
+            document.getElementById("user").innerHTML = "__";
+            document.getElementById("pass").innerHTML = "__";
+            document.getElementById("gend").innerHTML = "__";
+            document.getElementById("mail").innerHTML = "__";
+        }
+    </script>
+</body>
+    <style>
+    body {
+    font-family: cursive; 
+    background-image: url(https://images.newscientist.com/wp-content/uploads/2024/04/26103000/SEI_201240844.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 1000;
+}
+
+
+
+#loginnabai {
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    color: white;
+    padding-top: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 100px;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 20px;
+}
+
+#signup {
+    font-size: 30px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px;
+    margin: 0 auto;
+}
+
+button {
+    color: rgb(0, 0, 0);
+    font-family: inherit;
+}
+
+input {
+    color: black;
+    font-family: inherit;
+}
+
+#mgalabel {
+    float: left;
+}
+        }
+    </style>
+
+</html>

@@ -1,0 +1,321 @@
+<DOCTYPE html>
+<html>
+<head>
+</head>
+<body> 
+    <header>
+        <nav class="navbar">
+            <div class="options">
+                <a href="index.html">Log in</a>
+                <a href="HOMEPAGE.html">Home</a>
+                <a href="EXPLOREPAGE.html">Explore</a>
+                <a href="QUIZPAGE.html">Quiz</a>
+                <a href="CONTACTPAGE.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <div class="box">
+        <div class="firstcontent">
+            <h2>TECTONIC PLATES</h2>
+        </div>  
+        <div class="content">
+            <p>Large, solid parts of the Earth's crust and upper mantle make form the lithospheric plates, and the movement of these plates is explained by the basic geological theory of plate tectonics. This theory offers a framework for comprehending a range of geological processes and phenomena, such as the development of mountains, earthquakes, volcanoes, and the dispersion of continents and seas.</p>
+        </div>
+    </div>
+     <div class="box2">
+        <div class="secondcontent">
+            <h2>LITHOSPHERIC PLATES</h2>
+        </div>  
+        <div class="content2">
+            <p>Sliding on the semi-fluid asthenosphere beneath, the Earth's lithosphere is composed of multiple large and small plates. Mantle convection, gravitational forces, and Earth's rotation are some of the forces that cause these plates to move continuously.</p>
+        </div>
+    </div>
+    <h1 class= "firstsection">TYPES OF PLATE BOUNDARIES</h1>
+         <div class="box3">
+        <div class="thirdcontent">
+            <h2>DIVERGENT BOUNDARIES</h2>
+        </div>  
+        <div class="content3">
+            <p>Plates slide away from one another. This movement causes new oceanic crust to form as the seafloor spreads. Divergent boundaries are commonly connected with mid-ocean ridges.</p>
+        </div>
+    </div>
+     <div class="box4">
+        <div class="fourthcontent">
+            <h2>CONVERGENT BOUNDARIES</h2>
+        </div>  
+        <div class="content4">
+            <p>Plates go in the direction of one another and clash. The kinds of plates involved (oceanic-oceanic, oceanic-continental, or continental-continental) determine the type of collision. Volcanic activity, mountain formation, and subduction zones can result from convergent boundaries.</p>
+        </div>
+    </div>
+      <div class="box5">
+        <div class="fifthcontent">
+            <h2>TRANSFORM BOUNDARIES</h2>
+        </div>  
+        <div class="content5">
+            <p>Plates glide horizontally past one another. This movement has the potential to cause earthquakes along transform faults like California's San Andreas.</p>
+        </div>
+    </div>
+<style>
+   
+    
+    header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 1000;
+        }
+
+        .navbar {
+            
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .options {
+            display: flex;
+            gap: 15px;
+        }
+
+        .options a {
+            font-size: 50px;
+            font-family: cursive;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s, border 0.3s;
+        }
+
+        .options a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+    body{
+    background-image: url(https://images.unsplash.com/photo-1604864112605-7387b40eee4b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1vdW50YWluJTIwcm9ja3N8ZW58MHx8MHx8fDA%3D);
+    }
+    p {
+        width: 400px;
+    }
+    .box {
+        color: white;
+        margin-top: 150px;
+        margin-left: 35%;
+        margin-right: 50%;
+        width: 500px;
+        height: 200px;
+        background-color: saddlebrown;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+    .box:hover {
+        height: 300px; 
+        color:black;
+        background-color: white;
+    }
+
+    .firstcontent {
+    
+     text-align: center;
+        position: absolute;
+    }
+
+    .content {
+        font-style: oblique;
+        text-align: center;
+        opacity: 0; 
+        transition: opacity 0.3s ease;
+    }
+
+    .box:hover .firstcontent {
+        display: none; 
+    }
+
+    .box:hover .content {
+        opacity: 1; 
+    }
+    .box2 {
+        
+        
+        color: white;
+        margin-top: 30px;
+        margin-left: 35%;
+        margin-right: 50%;
+        width: 500px;
+        height: 200px;
+        background-color: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+    .box2:hover {
+        height: 300px; 
+        color:black;
+        background-color: white;
+    }
+
+    .secondcontent {
+    
+     text-align: center;
+        position: absolute;
+    }
+
+    .content2 {
+        font-style: oblique;
+        text-align: center;
+        opacity: 0; 
+        transition: opacity 0.3s ease;
+    }
+
+    .box2:hover .secondcontent {
+        display: none; 
+    }
+
+    .box2:hover .content2 {
+        opacity: 1; 
+    }
+    .firstsection{
+    padding:20px;
+    background-color: rgba(0,0,0,0.5);
+    color:white;
+    border: 3px solid black;
+    font-size: 50px;
+    margin:10%;
+    margin-bottom: 5%;
+    align-content: center;
+    }
+   
+    .box3 {
+        
+        float:right;
+        color: white;
+        margin-top: 30px;
+        margin-right: 50%;
+        width: 500px;
+        height: 200px;
+        background-color:burlywood;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+    .box3:hover {
+        height: 300px; 
+        color:black;
+        background-color: white;
+    }
+
+    .thirdcontent {
+    
+     text-align: center;
+        position: absolute;
+    }
+
+    .content3 {
+        font-style: oblique;
+        text-align: center;
+        opacity: 0; 
+        transition: opacity 0.3s ease;
+    }
+
+    .box3:hover .thirdcontent {
+        display: none; 
+    }
+
+    .box3:hover .content3 {
+        opacity: 1; 
+    }
+    .box4 {
+        float: right;
+        margin-right:10%;;
+        color: white;
+        margin-top: 0px;
+        margin-left: 35%;
+        width: 500px;
+        height: 200px;
+        background-color:darkgoldenrod;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+    .box4:hover {
+        height: 300px; 
+        color:black;
+        background-color: white;
+    }
+
+    .fourthcontent {
+    
+     text-align: center;
+        position: absolute;
+    }
+
+    .content4  {
+        font-style: oblique;
+        text-align: center;
+        opacity: 0; 
+        transition: opacity 0.3s ease;
+    }
+
+    .box4:hover .fourthcontent {
+        display: none; 
+    }
+
+    .box4:hover .content4 {
+        opacity: 1; 
+    }
+    .box5 {
+        
+        float:right;
+        color: white;
+        margin-bottom: 7%;
+        margin-right: 50%;
+        width: 500px;
+        height: 200px;
+        background-color:chocolate;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+    .box5:hover {
+        height: 300px; 
+        color:black;
+        background-color: white;
+    }
+
+    .fifthcontent {
+    
+     text-align: center;
+        position: absolute;
+    }
+
+    .content5 {
+        font-style: oblique;
+        text-align: center;
+        opacity: 0; 
+        transition: opacity 0.3s ease;
+    }
+
+    .box5:hover .fifthcontent {
+        display: none; 
+    }
+
+    .box5:hover .content5 {
+        opacity: 1; 
+    }
+</style>
+</html>

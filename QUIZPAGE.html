@@ -1,0 +1,170 @@
+<DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="options">
+                <a href="index.html">Log in</a>
+                <a href="HOMEPAGE.html">Home</a>
+                <a href="EXPLOREPAGE.html">Explore</a>
+                <a href="QUIZPAGE.html">Quiz</a>
+                <a href="CONTACTPAGE.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <h1>WHAT TYPE OF BOUNDARY IS THIS?</h1>
+    <div class="quiz-container">
+        <img id="quiz-image" src="" alt="Quiz Image">
+        <input type="text" id="answer" placeholder="Type your answer here">
+        <button onclick="checkAnswer()">Submit</button>
+        <div id="score-container"></div>
+    </div>
+
+    <script>
+        const questions = [
+            { image: "convergentpic.png", answers: ["convergent boundaries", "convergent", "convergent boundary"] },
+            { image: "transformpic.jpeg", answers: ["transform boundaries", "transform", "transform boundary"] },
+            { image: "divergentpic.jpeg", answers: ["divergent boundaries", "divergent", "divergent boundary"] }
+        ];
+        let currentQuestion = 0;
+        let score = 0;
+        let tries = 0;
+
+        function loadQuestion() {
+            document.getElementById('quiz-image').src = questions[currentQuestion].image;
+            document.getElementById('answer').value = '';
+            tries = 0;
+        }
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value.trim().toLowerCase();
+            if (questions[currentQuestion].answers.includes(userAnswer)) {
+                alert("Correct!");
+                score++;
+                nextQuestion();
+            } else {
+                alert("Wrong!");
+                tries++;
+                if (tries >= 3) {
+                    nextQuestion();
+                }
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                displayScore();
+            }
+        }
+
+        function displayScore() {
+            document.querySelector('.quiz-container').innerHTML = `
+                <h2>Your score: ${score}/${questions.length}</h2>
+                <button onclick="restartQuiz()">Try Again</button>
+            `;
+        }
+
+          function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.querySelector('.quiz-container').innerHTML = `
+                <img id="quiz-image" src="" alt="Quiz Image">
+                <input type="text" id="answer" placeholder="Type your answer here">
+                <button onclick="checkAnswer()">Submit</button>
+                <div id="score-container"></div>
+            `;
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+    <style>
+        
+    header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 1000;
+        }
+
+        .navbar {
+            
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .options {
+            display: flex;
+            gap: 15px;
+        }
+
+        .options a {
+            font-size: 50px;
+            font-family: cursive;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s, border 0.3s;
+        }
+
+        .options a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        h1{
+        font-size:50px;
+        width:400px;
+            
+        }
+            
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color:darkgoldenrod;
+        }
+        .quiz-container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        #quiz-image {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        #answer {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</body>
+</html>
